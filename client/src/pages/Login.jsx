@@ -19,7 +19,6 @@ const Login = () => {
     try {
       const res = await axios.post(`${API_URL}/api/auth/login`, { email, password });
       login(res.data);
-      
       // Role-based navigation from your flowchart logic
       if (res.data.user.role === 'recruiter') {
         navigate('/recruiter-dashboard');
